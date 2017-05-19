@@ -14,12 +14,15 @@ public class Labyrinthe {
     private int[][] tableau;
     int largeur;
     int hauteur;
+    int x;
+    int y;
+    String infoJouers;
    
     /**
      * constructeur 
      * @param donnees chaine de caractère donnée
      */
-    public Labyrinthe(String donnees){
+    public Labyrinthe(String donnees, String numeroJoueur){
         String[] parties3 = donnees.split("/"); // coupe en 3 les données: taille, constitution du labyrinthe, info sur les joueurs
         String[] tailles = parties3[0].split("x"); // coupe en 2 la taille du labyrinthe: largeur, hauteur
         largeur=Integer.parseInt(tailles[0]);
@@ -30,9 +33,16 @@ public class Labyrinthe {
         creerMatrice(parties3[1]);
         for (int l = 0; l <largeur; l++) {
             for (int c = 0; c < hauteur; c++) {
-                System.out.print(tableau[l][c]);
+                //System.out.print(tableau[l][c]);
             }
         }
+        infoJouers = parties3[2];//"3-1,1-11,9-11,1";
+        String[] infos = infoJouers.split("-");
+        String[] cooJoueur = infos[Integer.parseInt(numeroJoueur) +1].split(",");
+        this.x = Integer.parseInt(cooJoueur[0]);
+        this.y = Integer.parseInt(cooJoueur[1]);
+        System.out.println("coordonnées du joueur :  x= " +  this.x + " y = " + this.y);
+    
         
     }
     

@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -31,8 +32,8 @@ public class EpreuveIA {
             
             client s = new client(adressIp, port);
             s.envoyerNom(nomEquipe);
-            Labyrinthe l = new Labyrinthe(""+s.recuperation()); 
             numeroJoueur = s.recuperation();
+            Labyrinthe l = new Labyrinthe(s.recuperation(),numeroJoueur ); 
 
             while(infoServ != "FIN"){
                 infoServ = s.recuperation();  // recuperer les info du serveur
