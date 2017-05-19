@@ -16,6 +16,10 @@ public class EpreuveIA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //test labyrinthe
+        Labyrinthe lab= new Labyrinthe("4x4/D-D-D-D-D-D-S-D-D-S-S-D-D-D-D-D/3-1,1");
+        
     }
     
 }
