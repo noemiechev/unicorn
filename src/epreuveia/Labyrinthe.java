@@ -36,7 +36,7 @@ public class Labyrinthe {
                 //System.out.print(tableau[l][c]);
             }
         }
-        infoJouers = parties3[2];//"3-1,1-11,9-11,1";
+        infoJouers = "3-1,1-11,9-11,1";//parties3[2];//"3-1,1-11,9-11,1";
         String[] infos = infoJouers.split("-");
         String[] cooJoueur = infos[Integer.parseInt(numeroJoueur) +1].split(",");
         this.x = Integer.parseInt(cooJoueur[0]);

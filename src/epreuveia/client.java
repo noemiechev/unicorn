@@ -20,7 +20,7 @@ public class client {
     private String ip;
     private String nom;
     private Socket s;
-
+    
     public client(String ip, int port) throws IOException {
         this.ip = ip;
         this.port = port;
