@@ -21,9 +21,10 @@ public class EpreuveIA {
     public static void main(String[] args) throws IOException {
         //InetAddress ip = new InetAddress();
         client s = new client("127.0.0.1", 1337);
-        s.envoyerNom("equipe");
+        s.envoyerNom("DeletePackages");
         while(1==1){
             s.recuperation();
+            System.out.println(s.recuperation());
         }
     }
     

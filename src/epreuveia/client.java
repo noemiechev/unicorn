@@ -5,16 +5,11 @@
  */
 package epreuveia;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.net.InetAddress;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -34,27 +29,30 @@ public class client {
         
     }
     
-    public String recuperation()
+    /**
+     * 
+     * @return
+     * @throws IOException 
+     */
+    public String recuperation() throws IOException
     {
         String res = "" ;
-        DataInputStream din ;
-        try {
-            din = new DataInputStream(s.getInputStream());
-            
-            din.readUTF();
-            System.out.println(din);
-        } catch (IOException ex) {
-            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        BufferedReader ed = new BufferedReader(new InputStreamReader(this.s.getInputStream()));
+        res = ed.readLine();
+
         return res;
     }
     
+    /**
+     * Envoie le nol au serveur 
+     * @param nom le nom a envoyer
+     * @throws IOException 
+     */
     public void envoyerNom(String nom) throws IOException
     {
        PrintStream ps = new PrintStream(this.s.getOutputStream());
-       ps.println(nom);
-       
-       
+       ps.println(nom);  
     }
     
+  
 }
