@@ -32,18 +32,9 @@ public class Labyrinthe {
        
         tableau= new int[largeur][hauteur];
         creerMatrice(parties3[1]);
-<<<<<<< HEAD
-        for (int l = 0; l <largeur; l++) {
-            for (int c = 0; c < hauteur; c++) {
-                //System.out.print(tableau[l][c]);
-            }
-        }
-        infoJouers = "3-1,1-11,9-11,1";//parties3[2];//"3-1,1-11,9-11,1";
-=======
-  
+
         //pos du joueur
         infoJouers = parties3[2];//"3-1,1-11,9-11,1";
->>>>>>> 963a59d556010ebe85e1b74097379bb19e174fa6
         String[] infos = infoJouers.split("-");
         String[] cooJoueur = infos[Integer.parseInt(numeroJoueur) +1].split(",");
         this.x = Integer.parseInt(cooJoueur[0]);
