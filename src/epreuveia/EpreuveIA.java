@@ -22,12 +22,16 @@ public class EpreuveIA {
      */
     public static void main(String[] args) {
         try {
-            String nomEquipe = "127.0.0.1";
+            // 
+            String adressIp = "127.0.0.1";
+            String nomEquipe = "Equipe 6";
+            int port = 1337;
             String infoServ = "";
             String numeroJoueur;
-            client s = new client(nomEquipe, 1337);
-            s.envoyerNom("DeletePackages");
             
+            client s = new client(adressIp, port);
+            s.envoyerNom(nomEquipe);
+            Labyrinthe l = new Labyrinthe(""+s.recuperation()); 
             numeroJoueur = s.recuperation();
 
             while(infoServ != "FIN"){
@@ -45,8 +49,9 @@ public class EpreuveIA {
             }
         } catch (IOException ex) {
             System.out.println("Connexion au serveur refuséee !!!!!! Lance le serveur ");
-        }
+
         
-    }
+        }
     
+    }
 }

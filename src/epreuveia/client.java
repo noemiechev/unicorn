@@ -24,7 +24,6 @@ public class client {
     public client(String ip, int port) throws IOException {
         this.ip = ip;
         this.port = port;
-        this.nom = nom;
         s = new Socket(ip, port);
         
     }
