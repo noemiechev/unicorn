@@ -5,6 +5,10 @@
  */
 package epreuveia;
 
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+
 /**
  *
  * @author Armen
@@ -14,12 +18,15 @@ public class EpreuveIA {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        //test labyrinthe
-        Labyrinthe lab= new Labyrinthe("4x4/D-D-D-D-D-D-S-D-D-S-S-D-D-D-D-D/3-1,1");
-        
+
+    public static void main(String[] args) throws IOException {
+        //InetAddress ip = new InetAddress();
+        client s = new client("127.0.0.1", 1337);
+        s.envoyerNom("DeletePackages");
+        while(1==1){
+            s.recuperation();
+            System.out.println(s.recuperation());
+        }
     }
     
 }
