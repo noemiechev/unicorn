@@ -37,6 +37,7 @@ public class Labyrinthe {
         System.out.println("coordonnées du joueur :  x= " +  this.x + " y = " + this.y);
         creerTabJoueur(this.x,this.y,parties3[1]); //changer pos du joueur
        
+
     }
     
     /**
@@ -79,6 +80,7 @@ public class Labyrinthe {
         }
         
         String[] laCase= constitutionLab.split("-"); // récupère case par case
+        
         tableauInit[3][3]=laCase[sommet(x, y)];
         if (estValide(x,y-3)) {
             tableauInit[3][0]=laCase[sommet(x, y-3)];

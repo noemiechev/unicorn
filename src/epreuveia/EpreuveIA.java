@@ -35,7 +35,12 @@ public class EpreuveIA {
             s.envoyerNom(nomEquipe);
             numeroJoueur = s.recuperation(); // recuperer le numero de notre joueur
             
+
+            //Labyrinthe l = new Labyrinthe(s.recuperation(),numeroJoueur ); 
+            Matrice m = new Matrice(s.recuperation());
+
            // Labyrinthe l = new Labyrinthe(s.recuperation(),numeroJoueur ); 
+
 
             while(infoServ != "FIN"){
                 infoServ = s.recuperation();  // recuperer les info du serveur
