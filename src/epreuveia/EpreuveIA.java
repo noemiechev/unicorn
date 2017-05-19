@@ -34,11 +34,12 @@ public class EpreuveIA {
             client s = new client(adressIp, port);
             s.envoyerNom(nomEquipe);
             numeroJoueur = s.recuperation(); // recuperer le numero de notre joueur
-            
-
+           
             //Labyrinthe l = new Labyrinthe(s.recuperation(),numeroJoueur ); 
-            Matrice m = new Matrice(s.recuperation());
-
+            Matrice m = new Matrice(s.recuperation(), numeroJoueur);
+            Dijkstra d = new Dijkstra();
+            
+            d.calculer(m.getSommetJ());
            // Labyrinthe l = new Labyrinthe(s.recuperation(),numeroJoueur ); 
 
 
