@@ -14,22 +14,34 @@ public class Labyrinthe {
     private int[][] tableau;
     int largeur;
     int hauteur;
+    int x;
+    int y;
+    String infoJouers;
    
     /**
      * constructeur 
      * @param donnees chaine de caractère donnée
      */
-    public Labyrinthe(String donnees){
+    public Labyrinthe(String donnees, String numeroJoueur){
         String[] parties3 = donnees.split("/"); // coupe en 3 les données: taille, constitution du labyrinthe, info sur les joueurs
         String[] tailles = parties3[0].split("x"); // coupe en 2 la taille du labyrinthe: largeur, hauteur
         largeur=Integer.parseInt(tailles[0]);
         hauteur=Integer.parseInt(tailles[1]);
         System.out.println("l "+largeur);
         System.out.println("h "+hauteur);
-        creerTabJoueur(0,0,parties3[1]); //changer pos du joueur
+       
         tableau= new int[largeur][hauteur];
         creerMatrice(parties3[1]);
-              
+  
+        //pos du joueur
+        infoJouers = parties3[2];//"3-1,1-11,9-11,1";
+        String[] infos = infoJouers.split("-");
+        String[] cooJoueur = infos[Integer.parseInt(numeroJoueur) +1].split(",");
+        this.x = Integer.parseInt(cooJoueur[0]);
+        this.y = Integer.parseInt(cooJoueur[1]);
+        System.out.println("coordonnées du joueur :  x= " +  this.x + " y = " + this.y);
+        creerTabJoueur(this.x,this.y,parties3[1]); //changer pos du joueur
+        
     }
     
     /**
@@ -133,7 +145,13 @@ public class Labyrinthe {
             tableauInit[5][4]=laCase[sommet(x+2, y+1)];
         }
         
-       
+       for(int i=0; i<7; i++)
+       {
+           for(int j=0; j<7; j++)
+           {
+               System.out.println(tableauInit[i][j]);
+           }
+       }
     }   
     
 }
