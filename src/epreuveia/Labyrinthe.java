@@ -28,12 +28,6 @@ public class Labyrinthe {
         String[] tailles = parties3[0].split("x"); // coupe en 2 la taille du labyrinthe: largeur, hauteur
         largeur=Integer.parseInt(tailles[0]);
         hauteur=Integer.parseInt(tailles[1]);
-        System.out.println("l "+largeur);
-        System.out.println("h "+hauteur);
-       
-        tableau= new int[largeur][hauteur];
-        creerMatrice(parties3[1]);
-
         //pos du joueur
         infoJouers = parties3[2];//"3-1,1-11,9-11,1";
         String[] infos = infoJouers.split("-");
@@ -42,7 +36,7 @@ public class Labyrinthe {
         this.y = Integer.parseInt(cooJoueur[1]);
         System.out.println("coordonnées du joueur :  x= " +  this.x + " y = " + this.y);
         creerTabJoueur(this.x,this.y,parties3[1]); //changer pos du joueur
-        
+       
     }
     
     /**
