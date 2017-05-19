@@ -32,21 +32,23 @@ public class EpreuveIA {
             
             client s = new client(adressIp, port);
             s.envoyerNom(nomEquipe);
-            numeroJoueur = s.recuperation();
-            Labyrinthe l = new Labyrinthe(s.recuperation(),numeroJoueur ); 
+            numeroJoueur = s.recuperation(); // recuperer le numero de notre joueur
+            
+            //Labyrinthe l = new Labyrinthe(s.recuperation(),numeroJoueur ); 
 
             while(infoServ != "FIN"){
                 infoServ = s.recuperation();  // recuperer les info du serveur
-                String infos[] =  infoServ.split("/");
-                System.out.println("Numero du joueur : " + numeroJoueur);
+                //String infos[] =  infoServ.split("/");
+               // System.out.println("Numero du joueur : " + numeroJoueur);
                 
-                if (!infoServ.equals("FIN")){
+             
+                /*if (!infoServ.equals("FIN")){
                     System.out.println("" + infos[0]);
                     System.out.println("" + infos[1]);
                     System.out.println("" + infos[2]);
                 }
                 // System.out.println(infoServ);
-                
+                */
             }
         } catch (IOException ex) {
             System.out.println("Connexion au serveur refuséee !!!!!! Lance le serveur ");

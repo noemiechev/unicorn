@@ -5,6 +5,9 @@
  */
 package epreuveia;
 
+import java.io.IOException;
+import java.io.PrintStream;
+
 /**
  *
  * @author Armen
@@ -12,10 +15,57 @@ package epreuveia;
 public class Joueur {
 
  
-       private int x;
-       private int y;
+     private int x;
+     private int y;
        
-        public Joueur(String infoJouers) {
+     public Joueur(String infoJouers) {
         
-        }
+    }
+     
+    /**
+     * Donner l'ordre de se deplacer vers le haut
+     * @return N
+     */
+     public String allerHaut()
+    {
+        return "N";
+    }
+       
+    /**
+     * Donner l'ordre de se deplacer vers le bas
+     * @return S
+    */
+    public String allerBas()
+    {
+        return "S"; 
+    }
+     
+    /**
+     * Donner l'ordre de se deplacer vers le droite
+     * @return E
+     */
+    public String allerDroite()
+    {
+        return "E";
+    }
+     
+    /**
+     * Donner l'ordre de se deplacer vers le gauche
+     * @return O
+     */
+    public String allerGauche()
+    {
+       return "O"; 
+    }
+    
+    /**
+     * Donner l'ordre de se rester sur place
+     * @return C
+     */
+    public String waitAndSC()
+    {
+       return "C"; 
+    }    
+   
+        
 }
