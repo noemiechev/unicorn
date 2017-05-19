@@ -23,9 +23,11 @@ public class EpreuveIA {
         //InetAddress ip = new InetAddress();
         client s = new client("127.0.0.1", 1337);
         s.envoyerNom("DeletePackages");
+        s.recuperation();
+        Labyrinthe l = new Labyrinthe(""+s.recuperation()); 
         while(1==1){
-            s.recuperation();
-            System.out.println(s.recuperation());
+              
+            
         }
     }
     

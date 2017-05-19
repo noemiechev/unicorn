@@ -23,14 +23,17 @@ public class Labyrinthe {
         String[] parties3 = donnees.split("/"); // coupe en 3 les données: taille, constitution du labyrinthe, info sur les joueurs
         String[] tailles = parties3[0].split("x"); // coupe en 2 la taille du labyrinthe: largeur, hauteur
         largeur=Integer.parseInt(tailles[0]);
-        hauteur=Integer.parseInt(tailles[1]); 
+        hauteur=Integer.parseInt(tailles[1]);
+        System.out.println("l "+largeur);
+        System.out.println("h "+hauteur);
         tableau= new int[largeur][hauteur];
         creerMatrice(parties3[1]);
         for (int l = 0; l <largeur; l++) {
             for (int c = 0; c < hauteur; c++) {
-                System.out.print(tableau[c][l]);
+                System.out.print(tableau[l][c]);
             }
         }
+        
     }
     
     /**
@@ -43,20 +46,13 @@ public class Labyrinthe {
         for (int l = 0; l <largeur; l++) {
             for (int c = 0; c < hauteur; c++) { 
                if (laCase[num].charAt(0)=='D'){ // bordure
-                   tableau[c][l]=0;
+                   tableau[l][c]=0;
                } else{ // sable avec ou sans bonus et ou moule
-                   tableau[c][l]=1;     
+                   tableau[l][c]=1;     
                }
             num=num+1;
             }
         }
     }
     
-    private void ajouterMouvementFrites(){
-       for (int c = 0; c <largeur; c++) {
-            for (int l = 0; l < hauteur; l++) {
-                
-            } 
-       }
-    }
 }
