@@ -18,7 +18,7 @@ public class Joueur {
      private int x;
      private int y;
        
-     public Joueur(String infoJouers) {
+     public Joueur() {
         
     }
      
@@ -26,7 +26,7 @@ public class Joueur {
      * Donner l'ordre de se deplacer vers le haut
      * @return N
      */
-     public String allerHaut()
+    public String allerHaut()
     {
         return "N";
     }

@@ -16,6 +16,7 @@ public class Labyrinthe {
     int hauteur;
     int x;
     int y;
+    Joueur joueur = new Joueur();  // a modifier pour ajouter les coordonnee
     String infoJouers;
    
     /**
@@ -145,13 +146,7 @@ public class Labyrinthe {
             tableauInit[5][4]=laCase[sommet(x+2, y+1)];
         }
         
-       for(int i=0; i<7; i++)
-       {
-           for(int j=0; j<7; j++)
-           {
-               System.out.println(tableauInit[i][j]);
-           }
-       }
+
     }   
     
 }

@@ -7,6 +7,7 @@
 package epreuveia;
 
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.util.logging.Level;
@@ -34,21 +35,21 @@ public class EpreuveIA {
             s.envoyerNom(nomEquipe);
             numeroJoueur = s.recuperation(); // recuperer le numero de notre joueur
             
-            //Labyrinthe l = new Labyrinthe(s.recuperation(),numeroJoueur ); 
+           // Labyrinthe l = new Labyrinthe(s.recuperation(),numeroJoueur ); 
 
             while(infoServ != "FIN"){
                 infoServ = s.recuperation();  // recuperer les info du serveur
                 //String infos[] =  infoServ.split("/");
                // System.out.println("Numero du joueur : " + numeroJoueur);
+           /*
+              s.deplacerJoueur(l.joueur.allerBas());
+                System.out.println(l.joueur.allerBas());
+              */
+           
+           s.deplacerJoueur();
                 
-             
-                /*if (!infoServ.equals("FIN")){
-                    System.out.println("" + infos[0]);
-                    System.out.println("" + infos[1]);
-                    System.out.println("" + infos[2]);
-                }
                 // System.out.println(infoServ);
-                */
+                
             }
         } catch (IOException ex) {
             System.out.println("Connexion au serveur refuséee !!!!!! Lance le serveur ");

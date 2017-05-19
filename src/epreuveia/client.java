@@ -19,13 +19,13 @@ public class client {
     private int port;
     private String ip;
     private String nom;
+
     private Socket s;
     
     public client(String ip, int port) throws IOException {
         this.ip = ip;
         this.port = port;
-        s = new Socket(ip, port);
-        
+        s = new Socket(ip, port);  
     }
     
     /**
@@ -53,5 +53,16 @@ public class client {
        ps.println(nom);  
     }
     
+    public void deplacerJoueur() throws IOException
+    {
+        System.out.println("ici");
+       PrintStream ps = new PrintStream(this.s.getOutputStream());
+       ps.println("E"); 
+       
+    }
+    
+    public Socket getSocket() {
+        return s;
+    }
   
 }
